@@ -3,11 +3,12 @@
   text-align: center;
   font-size: 40px;
 }
+
 .products {
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
 }
 
@@ -70,4 +71,16 @@
   background-color: rgb(255, 255, 255);
   color: black;
   cursor: pointer;
+}
+
+.searchBar {
+  padding: 10px;
+}
+
+.searchBar input {
+  border: solid 1px rgb(44, 43, 43);
+  border-radius: 5px;
+  width: 100%;
+  min-height: 35px;
+  font-size: 1.5em;
 }
