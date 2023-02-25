@@ -1,9 +1,9 @@
 import { useContext } from "react"
 import { ShopContext } from "../context/shop-context"
 
-export default function Product({data}){
-  const { id, productName, price, productImage } = data
-  const { addToCart, cartItems,removeFromCart } = useContext(ShopContext)
+export default function Product({ data }) {
+  const { id,productName,price,productImage } = data
+  const { addToCart,cartItems } = useContext(ShopContext)
 
   const cartItemAmount = cartItems[id]
 
@@ -17,19 +17,8 @@ export default function Product({data}){
         ${price}
       </p>
     </div>
-    <button className="addToCartBttn" onClick={(e)=>{
-      addToCart(id, 1)
-    }}>Add to Cart {cartItemAmount > 0 && <>({cartItemAmount})</> }</button>
-    {/* {
-      cartItemAmount > 0 && (
-        <>
-        <button className="removeFromCartBttn" style={{'marginTop': '5px'}}
-        onClick={(e)=>{
-          removeFromCart(id, 1)
-        }}
-        >Remove from cart</button>
-        </>
-      )
-    } */}
+    <button className="addToCartBttn" onClick={(e) => {
+      addToCart(id,1)
+    }}>Add to Cart {cartItemAmount > 0 && <>({cartItemAmount})</>}</button>
   </div>
 }

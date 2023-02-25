@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React,{ useContext } from 'react'
 import { ShopContext } from '../context/shop-context'
 
-export default function CartItem({data}) {
-  const { id, productName, price, productImage } = data
-  const { cartItems, addToCart, removeFromCart,updateAmount } = useContext(ShopContext)
+export default function CartItem({ data }) {
+  const { id,productName,price,productImage } = data
+  const { cartItems,addToCart,removeFromCart,updateAmount } = useContext(ShopContext)
   const itemAmount = Number(cartItems[id])
 
   return (
@@ -19,15 +19,15 @@ export default function CartItem({data}) {
           ${price}
         </p>
         <div className="countHandler">
-          <button onClick={(e)=>{
+          <button onClick={(e) => {
             removeFromCart(id,1)
           }} >-</button>
-          <input type="text" value={itemAmount} onInput={(e)=>{
+          <input type="text" value={itemAmount} onInput={(e) => {
             const value = Number(e.target.value)
-            if(isNaN(value)) return
-            updateAmount(Math.abs(value), id)
+            if (isNaN(value)) return
+            updateAmount(Math.abs(value),id)
           }} />
-          <button onClick={(e)=>{
+          <button onClick={(e) => {
             addToCart(id,1)
           }} >+</button>
         </div>
